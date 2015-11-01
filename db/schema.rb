@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151101170746) do
+ActiveRecord::Schema.define(version: 20151101193238) do
 
   create_table "artists", force: :cascade do |t|
     t.string   "name"
@@ -32,6 +32,11 @@ ActiveRecord::Schema.define(version: 20151101170746) do
     t.text     "description"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.integer  "museum_id"
+    t.integer  "artist_id"
   end
+
+  add_index "paintings", ["artist_id"], name: "index_paintings_on_artist_id"
+  add_index "paintings", ["museum_id"], name: "index_paintings_on_museum_id"
 
 end
