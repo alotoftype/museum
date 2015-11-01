@@ -11,11 +11,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151031170408) do
+ActiveRecord::Schema.define(version: 20151101170746) do
 
   create_table "artists", force: :cascade do |t|
     t.string   "name"
-    t.date     "dob"
+    t.string   "dob"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -23,6 +23,7 @@ ActiveRecord::Schema.define(version: 20151031170408) do
   create_table "museums", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string   "name"
   end
 
   create_table "paintings", force: :cascade do |t|
